@@ -7,7 +7,7 @@
 
 3. Crear un container images dentro del Storage Account
 
-4. Subir las imagenes del repo 
+4. Subir las imagenes del repo al container
 https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/tree/master/Allfiles/Labs/04/Starter/Images
 
 5. Vamos a trabajar con una solucion Armada con varios proyectos
@@ -15,18 +15,18 @@ https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure
 
 6. Subir los datos a la base de datos con el proyecto AdventureWorks.Upload
 
-* Vamos a subir el archivo models.json
+    * Vamos a subir el archivo models.json
 
-* Editar el Program.cs del Proyecto AdventureWorks.Upload modificando las variables vacias
+    * Editar el Program.cs del Proyecto AdventureWorks.Upload modificando las variables vacias
 
-* Agregar Paquete al proyecto Microsoft.Azure.Cosmos
-dotnet add package Microsoft.Azure.Cosmos -
+    * Agregar Paquete al proyecto Microsoft.Azure.Cosmos
+    dotnet add package Microsoft.Azure.Cosmos -
 
-* Ejecutar Proyecto
+    * Ejecutar Proyecto
 
 7. Ejecutar Proyecto Web
-* Modificar el application.settins
-* Agregar Clase AdventureWorksCosmosContext.cs ap proyecto AdventureWorks.Context
+    * Modificar el application.settins
+    * Agregar Clase AdventureWorksCosmosContext.cs ap proyecto AdventureWorks.Context
 
 ```c#
 using AdventureWorks.Models;

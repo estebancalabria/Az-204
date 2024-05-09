@@ -11,12 +11,12 @@
 
     public class Program
     {
-        private const string EndpointUrl = @"https://cosmo4trainner.documents.azure.com:443/";
-        private const string AuthorizationKey = "g7d4hzGgKomoUzc2UlNSYe2brKMncn0Zl4KaUrHCcx6HOPllTEDASb43hXOHhk4rjcwe1CNNv28cACDbkMFzsg==";
+        private const string EndpointUrl = @"";
+        private const string AuthorizationKey = "==";
         private const string DatabaseName = "Retail";
         private const string ContainerName = "Online";
         private const string PartitionKey = @"/Category";
-        private const string JsonFilePath = @"C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Upload\models.json";
+        private const string JsonFilePath = @"";
 
         static private int amountToInsert;
         static List<Model> models;
