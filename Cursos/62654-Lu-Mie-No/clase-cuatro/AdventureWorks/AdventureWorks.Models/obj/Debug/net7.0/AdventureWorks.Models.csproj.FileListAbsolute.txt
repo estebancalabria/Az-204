@@ -1,0 +1,12 @@
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\bin\Debug\net7.0\AdventureWorks.Models.deps.json
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\bin\Debug\net7.0\AdventureWorks.Models.dll
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\bin\Debug\net7.0\AdventureWorks.Models.pdb
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\AdventureWorks.Models.csproj.AssemblyReference.cache
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\AdventureWorks.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\AdventureWorks.Models.AssemblyInfoInputs.cache
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\AdventureWorks.Models.AssemblyInfo.cs
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\AdventureWorks.Models.csproj.CoreCompileInputs.cache
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\AdventureWorks.Models.dll
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\refint\AdventureWorks.Models.dll
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\AdventureWorks.Models.pdb
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cuatro\AdventureWorks\AdventureWorks.Models\obj\Debug\net7.0\ref\AdventureWorks.Models.dll

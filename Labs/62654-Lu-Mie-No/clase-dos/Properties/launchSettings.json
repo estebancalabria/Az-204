@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "clase_dos": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7110",
-      "launchBrowser": false
-    }
-  }
-}

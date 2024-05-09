@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "t2UY5/7pgMux8104+TUBQp/DSOYUM5fG0RjrfFQLp1Q=",
+  "Source": "AdventureWorks.Web",
+  "BasePath": "_content/AdventureWorks.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AdventureWorks.Web\\wwwroot",
+      "Source": "AdventureWorks.Web",
+      "ContentRoot": "C:\\Cursos\\Az-204\\Cursos\\62654-Lu-Mie-No\\clase-cuatro\\AdventureWorks\\AdventureWorks.Web\\wwwroot\\",
+      "BasePath": "_content/AdventureWorks.Web",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Cursos\\Az-204\\Cursos\\62654-Lu-Mie-No\\clase-cuatro\\AdventureWorks\\AdventureWorks.Web\\wwwroot\\mountains.jpg",
+      "SourceId": "AdventureWorks.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Cursos\\Az-204\\Cursos\\62654-Lu-Mie-No\\clase-cuatro\\AdventureWorks\\AdventureWorks.Web\\wwwroot\\",
+      "BasePath": "_content/AdventureWorks.Web",
+      "RelativePath": "mountains.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\mountains.jpg"
+    }
+  ]
+}

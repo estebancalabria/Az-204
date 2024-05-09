@@ -1,7 +1,0 @@
-C:\Cursos\Az-204\62654-Lu-Mie-No\clase-uno\Demo4Trainner\bin\Release\net7.0\publish\Demo4Trainner.exe
-C:\Cursos\Az-204\62654-Lu-Mie-No\clase-uno\Demo4Trainner\bin\Release\net7.0\publish\appsettings.Development.json
-C:\Cursos\Az-204\62654-Lu-Mie-No\clase-uno\Demo4Trainner\bin\Release\net7.0\publish\appsettings.json
-C:\Cursos\Az-204\62654-Lu-Mie-No\clase-uno\Demo4Trainner\bin\Release\net7.0\publish\Demo4Trainner.dll
-C:\Cursos\Az-204\62654-Lu-Mie-No\clase-uno\Demo4Trainner\bin\Release\net7.0\publish\Demo4Trainner.deps.json
-C:\Cursos\Az-204\62654-Lu-Mie-No\clase-uno\Demo4Trainner\bin\Release\net7.0\publish\Demo4Trainner.runtimeconfig.json
-C:\Cursos\Az-204\62654-Lu-Mie-No\clase-uno\Demo4Trainner\bin\Release\net7.0\publish\Demo4Trainner.pdb

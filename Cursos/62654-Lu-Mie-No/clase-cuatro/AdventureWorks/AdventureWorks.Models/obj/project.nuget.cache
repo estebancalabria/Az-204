@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OajWii+LCzmKL96izsHP8zZMpUkxDSZtcTsZLQ/5H9cNtjR5ktR/uZHXy2cOR3H33BYxJ1DZokF8PZNeh+c8QA==",
+  "success": true,
+  "projectFilePath": "C:\\Cursos\\Az-204\\Cursos\\62654-Lu-Mie-No\\clase-cuatro\\AdventureWorks\\AdventureWorks.Models\\AdventureWorks.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\esteb\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
