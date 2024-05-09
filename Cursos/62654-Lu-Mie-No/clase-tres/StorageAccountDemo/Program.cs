@@ -5,10 +5,10 @@ using Azure.Storage;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 
-var storageAccountName = "mediastor4trainner";
+var storageAccountName = "";
 //var blobEndpoint = @"https://mediastor4trainner.blob.core.windows.net/";
 var blobEndpoint = $@"https://{storageAccountName}.blob.core.windows.net/";
-var storageAccountKey = "9gmajK/O+pWqBCBneKwyp1hxwkw5gJfrBq/j1Ox/OZ8QYVkENqXhyGHB8PKgv3ZugDgUA2O/p1e0+ASt1mH+lQ==";
+var storageAccountKey = "";
 
 StorageSharedKeyCredential cred = new StorageSharedKeyCredential(storageAccountName, storageAccountKey);
 BlobServiceClient blob = new BlobServiceClient(new Uri(blobEndpoint), cred);
