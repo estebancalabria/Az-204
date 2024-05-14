@@ -1,0 +1,15 @@
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\bin\Debug\net8.0\ipcheck.exe
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\bin\Debug\net8.0\ipcheck.deps.json
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\bin\Debug\net8.0\ipcheck.runtimeconfig.json
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\bin\Debug\net8.0\ipcheck.dll
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\bin\Debug\net8.0\ipcheck.pdb
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ipcheck.GeneratedMSBuildEditorConfig.editorconfig
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ipcheck.AssemblyInfoInputs.cache
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ipcheck.AssemblyInfo.cs
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ipcheck.csproj.CoreCompileInputs.cache
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ipcheck.sourcelink.json
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ipcheck.dll
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\refint\ipcheck.dll
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ipcheck.pdb
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ipcheck.genruntimeconfig.cache
+C:\Cursos\Az-204\Cursos\62654-Lu-Mie-No\clase-cinco\ipcheck\obj\Debug\net8.0\ref\ipcheck.dll
