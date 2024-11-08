@@ -1,0 +1,7 @@
+C:\Cursos\Az-204\Cursos\71846-Mar-Jue-No\clase-siete-kv\KeyVaultDemo\bin\Release\net8.0\publish\KeyVaultDemo.exe
+C:\Cursos\Az-204\Cursos\71846-Mar-Jue-No\clase-siete-kv\KeyVaultDemo\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Cursos\Az-204\Cursos\71846-Mar-Jue-No\clase-siete-kv\KeyVaultDemo\bin\Release\net8.0\publish\appsettings.json
+C:\Cursos\Az-204\Cursos\71846-Mar-Jue-No\clase-siete-kv\KeyVaultDemo\bin\Release\net8.0\publish\KeyVaultDemo.dll
+C:\Cursos\Az-204\Cursos\71846-Mar-Jue-No\clase-siete-kv\KeyVaultDemo\bin\Release\net8.0\publish\KeyVaultDemo.deps.json
+C:\Cursos\Az-204\Cursos\71846-Mar-Jue-No\clase-siete-kv\KeyVaultDemo\bin\Release\net8.0\publish\KeyVaultDemo.runtimeconfig.json
+C:\Cursos\Az-204\Cursos\71846-Mar-Jue-No\clase-siete-kv\KeyVaultDemo\bin\Release\net8.0\publish\KeyVaultDemo.pdb

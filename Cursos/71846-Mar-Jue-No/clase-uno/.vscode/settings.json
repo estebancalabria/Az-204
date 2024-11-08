@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net8.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/91dc3067-fd7a-4ed3-95eb-8c938f69cbfe/resourceGroups/Rg-Az204-Clase-Uno/providers/Microsoft.Web/sites/az204-demoapp-4trainner"
+}
