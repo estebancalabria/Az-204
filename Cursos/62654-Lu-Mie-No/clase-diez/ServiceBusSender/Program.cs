@@ -1,7 +1,7 @@
 ﻿
 using Azure.Messaging.ServiceBus;
 
-String connectionString = "Endpoint=sb://bus4trainner.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=eeUFBzuX0hVHFX2ule0GALVLtU02RCGli+ASbKW0Pvo=";
+String connectionString = "xxxx";
 
 string name = "mysuperawesomequeue";
 

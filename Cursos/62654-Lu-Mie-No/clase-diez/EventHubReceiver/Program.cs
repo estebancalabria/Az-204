@@ -4,7 +4,7 @@ using Azure.Messaging.EventHubs;
 using Azure.Messaging.EventHubs.Consumer;
 using Microsoft.Extensions.Azure;
 
-String connectionString = "Endpoint=sb://hub4trainner.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=udWOkbILoj+uRFMUkLe7ZnAMj79i9/DWf+AEhGXCvcs=";
+String connectionString = "xxx";
 
 
 /*var events =consumerClient.ReadEventsAsync();

@@ -3,7 +3,7 @@ using System.Text;
 using Azure.Messaging.EventHubs;
 using Azure.Messaging.EventHubs.Producer;
 
-String connectionString = "Endpoint=sb://hub4trainner.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=udWOkbILoj+uRFMUkLe7ZnAMj79i9/DWf+AEhGXCvcs=";
+String connectionString = "xxxx";
 
 await using (EventHubProducerClient producerClient = new EventHubProducerClient(connectionString, "mysuperawesomehub"))
 {
