@@ -1,9 +1,9 @@
 
 # Instalaciones Requeridas
 
-🤪 Instalacion el DotNEt : [Enlace](https://dotnet.microsoft.com/en-us/download)
-🤪 Instalacion Azure Cli en Windows : [Enlace](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest&tabs=azure-cli)
-🤪 Instalacion Azure Functions Core Tools : [Enlace](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-csharp)
+🤪 Instalacion el DotNEt : [Enlace](https://dotnet.microsoft.com/en-us/download)  
+🤪 Instalacion Azure Cli en Windows : [Enlace](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest&tabs=azure-cli)  
+🤪 Instalacion Azure Functions Core Tools : [Enlace](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-csharp)  
 
 # GitHub y Laboratorios Oficiales
 
