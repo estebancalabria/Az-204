@@ -1,0 +1,46 @@
+# Blobs
+
+## Paquetes
+
+* Azure.Storage.Blobs
+
+## Clases
+
+* StorageSharedKeyCredential : Para conectarse 
+
+* BlobServiceClient : Para conectarme al blob
+* BlobContainerClient
+* BlobClient 
+
+* AccountInfo
+* BlobContainerItem
+* BlobItem
+
+---
+# Queues
+
+## Paquetes
+
+* Azure.Storage.Queues
+
+## Clases
+
+* QueueClient
+* QueueMessage
+
+---
+
+# Service Bus
+
+## Paquetes
+
+* Azure.Messaging.ServiceBus
+
+## Clases
+
+* ServiceBusClient
+* ServiceBusSender
+* ServiceBusReceiver
+* ServiceBusMessage
+* ServiceBusReceivedMessage
+* ServiceBusProcessor

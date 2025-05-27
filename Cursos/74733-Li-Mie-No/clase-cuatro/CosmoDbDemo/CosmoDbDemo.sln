@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmoDbDemo", "CosmoDbDemo.csproj", "{EE52183D-01DC-D12D-88A1-5B1269E1BF12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE52183D-01DC-D12D-88A1-5B1269E1BF12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE52183D-01DC-D12D-88A1-5B1269E1BF12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE52183D-01DC-D12D-88A1-5B1269E1BF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE52183D-01DC-D12D-88A1-5B1269E1BF12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B830085-56D4-4FB9-BBAD-C928119F9BEE}
+	EndGlobalSection
+EndGlobal

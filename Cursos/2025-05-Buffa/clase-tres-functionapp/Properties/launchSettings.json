@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "clase_tres_functionapp": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7043",
+      "launchBrowser": false
+    }
+  }
+}
