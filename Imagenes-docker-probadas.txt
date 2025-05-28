@@ -1,5 +1,0 @@
-# Linux
-
-mcr.microsoft.com/azuredocs/aci-helloworld
-nginx
-
