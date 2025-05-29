@@ -43,4 +43,18 @@
 * ServiceBusReceiver
 * ServiceBusMessage
 * ServiceBusReceivedMessage
+
+---
+
+# EventGrid
+
+## Paquetes 
+
+* Azure.Messaging.EventGrid
+
+## Clases
+
+* EventGridPublisherClient
+* AzureKeyCredential
+* EventGridEvent 
 * ServiceBusProcessor
