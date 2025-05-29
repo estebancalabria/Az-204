@@ -145,6 +145,13 @@ az webapp deploy --resource-group Rg-Az204-Clase-Siete-Trainner --name AwesomeAp
 az webapp deployment source config --name appClaseDiez --resource-group Rg-Az204-Clase-Diez --repo-url --branch main
 ```
 
+#### Hacer Deploy de una Web App desde el directorio del CSProj
+```bash
+az webapp up --name app4trainner-v2 --resource-group Rg-Az204-Clase-Diez --sku B1
+```
+
+> Nota : Si no existe la crea
+
 #### Configurar una App (Agregar una entrada en el appsettings)
 ```bash
 az webapp config appsettings set -g Rg-Az204-Clase-Dos -n app-az204-frontend-trainner --settings ApiUrl=https://app-az204-api-trainner.azurewebsites.net/
