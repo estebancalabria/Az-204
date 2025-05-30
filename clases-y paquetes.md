@@ -29,6 +29,19 @@
 * QueueMessage
 
 ---
+# CosmoDB
+
+## Paquetes
+
+* Microsoft.Azure.Cosmos
+
+## Clases
+
+* CosmosClient
+* Database
+* Container
+  
+---
 
 # Service Bus
 
