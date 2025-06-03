@@ -152,10 +152,18 @@ az webapp up --name app4trainner-v2 --resource-group Rg-Az204-Clase-Diez --sku B
 
 > Nota : Si no existe la crea
 
-#### Configurar una App (Agregar una entrada en el appsettings)
+#### Configurar una App (Agregar una entrada en el appsettings)  
+
 ```bash
 az webapp config appsettings set -g Rg-Az204-Clase-Dos -n app-az204-frontend-trainner --settings ApiUrl=https://app-az204-api-trainner.azurewebsites.net/
 ```
+
+#### Mostar el Log Stream desde la terminal  
+
+```bash
+az webapp log tail --name web4trainner --resource-group Rg-Az204-Bs-Clase-Siete
+```
+
 
 ## Function Apps
 
