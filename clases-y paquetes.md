@@ -100,3 +100,4 @@ builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
 
 ## Paquetes 
 * Microsoft.Extensions.Logging.ApplicationInsights
+* Microsoft.ApplicationInsights.AspNetCore
