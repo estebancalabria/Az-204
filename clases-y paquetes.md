@@ -82,9 +82,8 @@
 * Microsoft.Extensions.Logging.Console
 * Microsoft.Extensions.Logging.Debug
 
-## Configuracion para Log Stream
+## Configuracion para Log Stream en el Program.cs
 
-En el Program.cs
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
 
@@ -96,3 +95,8 @@ builder.Logging.AddDebug();
 builder.Logging.AddAzureWebAppDiagnostics();
 builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
 ```
+---
+# ApplicationInsights
+
+## Paquetes 
+* Microsoft.Extensions.Logging.ApplicationInsights
