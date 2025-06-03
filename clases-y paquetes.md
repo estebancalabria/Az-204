@@ -101,3 +101,9 @@ builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
 ## Paquetes 
 * Microsoft.Extensions.Logging.ApplicationInsights
 * Microsoft.ApplicationInsights.AspNetCore
+  
+## Configuracion Program.cs
+```csharp
+builder.Services.AddApplicationInsightsTelemetry();
+builder.Logging.AddApplicationInsights();
+```
