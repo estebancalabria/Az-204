@@ -104,3 +104,11 @@ builder.Logging.SetMinimumLevel(LogLevel.Information);
 builder.Services.AddApplicationInsightsTelemetry();
 builder.Logging.AddApplicationInsights();
 ```
+
+## Configuracion appsettings.json
+```json
+{
+  "ApplicationInsights": {
+    "ConnectionString": "InstrumentationKey=your-instrumentation-key-here"
+  },
+```
