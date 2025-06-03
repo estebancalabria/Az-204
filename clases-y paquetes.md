@@ -89,11 +89,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
-builder.Logging.AddDebug();
 builder.Logging.AddAzureWebAppDiagnostics();
-builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+builder.Logging.SetMinimumLevel(LogLevel.Information);
 ```
 ---
 # ApplicationInsights
