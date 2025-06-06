@@ -16,6 +16,7 @@ Este documento sirve como una guía de referencia rápida para los comandos más
 - [Redes](#redes)
 - [Máquinas Virtuales](#máquinas-virtuales)
 - [Contenedores](#contenedores)
+- [Log Analytics Workspace](#log-analytics-workspace)
 
 ## Iniciar sesión y configuración de cuenta
 
@@ -275,4 +276,11 @@ az acr build --resource-group Rg-Az500-Clase-Cinco --registry acr4trainner --fil
 ### Crear un container Instance desde una imagen en un Container Registry
 ```bash
 az container create --resource-group Rg-Az204-Clase-Seis-Trainner --name docker-4-trainner-ext-2 --image acr4trainner.azurecr.io/ipcheck:latest2 --assign-identity
+```
+## Log Analytics Workspace
+
+### Crear un Log Analytis Workspace
+
+```bash
+az monitor log-analytics workspace create --name log4trainner --resource-group Rg-Az204-Bs-Clase-Ocho --location westus
 ```
