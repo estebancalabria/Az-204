@@ -17,7 +17,9 @@ Este documento sirve como una guía de referencia rápida para los comandos más
 - [Máquinas Virtuales](#máquinas-virtuales)
 - [Contenedores](#contenedores)
 - [Log Analytics Workspace](#log-analytics-workspace)
+- [Application Inisights](#application-insights)
 
+---
 ## Iniciar sesión y configuración de cuenta
 
 ### Iniciar sesión en Azure
@@ -29,7 +31,7 @@ az login
 ```bash
 az account set --subscription <name or id>
 ```
-
+---
 ## Resource Groups
 
 ### Crear Resource Group
@@ -42,12 +44,16 @@ az group create --name Rg-Az204-Clase-Tres --location eastus
 az group delete --resource-group Rg-Temp
 ```
 
+---
+
 ## ARM Templates
 
 ### Desplegar un ARM Template
 ```bash
 az deployment group create --resource-group Rg-Az104-Lab3b --template-file ./new-template.json
 ```
+
+---
 
 ## Storage
 
@@ -87,12 +93,16 @@ az storage blob directory upload --container demo-container --source db.json --c
 az storage blob generate-sas --account-name cs4trainner --name template.json --container-name private-contaner --permission r --auth-mode login --as-user --full-uri --expiry "2023-01-08"
 ```
 
+---
+
 ## Key Vault
 
 ### Crear una Key Vault
 ```bash
 az keyvault create --name key4trainner --resource-grouo Rg-Az204-Clase8-Trainner --location eastus --sku standard --enable-purge-protection $true --retention-days 90
 ```
+
+---
 
 ## App Service
 
@@ -277,10 +287,19 @@ az acr build --resource-group Rg-Az500-Clase-Cinco --registry acr4trainner --fil
 ```bash
 az container create --resource-group Rg-Az204-Clase-Seis-Trainner --name docker-4-trainner-ext-2 --image acr4trainner.azurecr.io/ipcheck:latest2 --assign-identity
 ```
+
+---
 ## Log Analytics Workspace
 
 ### Crear un Log Analytis Workspace
 
 ```bash
 az monitor log-analytics workspace create --name log4trainner --resource-group Rg-Az204-Bs-Clase-Ocho --location westus
+```
+---
+## Application Insights
+
+### Crear un Application Insights
+```bash
+az monitor app-insights component create --app log4trainner --resource-group Rg-Az204-Bs-Clase-Ocho --location westus --workspace log4trainner
 ```
