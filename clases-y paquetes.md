@@ -72,6 +72,18 @@
 * EventGridEvent 
 * ServiceBusProcessor
 
+# Event Hub
+
+## Paquetes
+
+* Azure.Messaging.EventHubs
+
+## Clases
+
+* EventHubProducerClient
+* EventDataBatch
+* EventData
+
 ---
  # Logging
 
