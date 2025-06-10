@@ -124,3 +124,20 @@ builder.Logging.AddApplicationInsights();
     "ConnectionString": "InstrumentationKey=your-instrumentation-key-here"
   },
 ```
+---
+# KeyVault
+
+## Paquetes
+
+* Azure.Identity
+* Azure.Security.KeyVault.Secrets
+
+## Clases
+
+* DefaultAzureCredential
+* SecretClient
+* KeyVaultSecret
+
+## Configuracion App Service
+
+* @Microsoft.KeyVault(SecretUri=<SecretUri>)
