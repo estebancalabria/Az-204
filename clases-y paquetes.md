@@ -27,6 +27,17 @@
 
 * QueueClient
 * QueueMessage
+---
+# Tables
+
+## Paquetes
+
+* Azure.Data.Tables
+
+## Clases
+
+* TableClient
+* TableEntity
 
 ---
 # CosmoDB
