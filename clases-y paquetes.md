@@ -65,6 +65,7 @@
 * ServiceBusClient
 * ServiceBusSender
 * ServiceBusReceiver
+* ServiceBusProcessor
 * ServiceBusMessage
 * ServiceBusReceivedMessage
 
