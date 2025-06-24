@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageAccountUpload", "StorageAccountUpload.csproj", "{AD041C27-1892-3F33-8911-CE20C73681DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD041C27-1892-3F33-8911-CE20C73681DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD041C27-1892-3F33-8911-CE20C73681DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD041C27-1892-3F33-8911-CE20C73681DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD041C27-1892-3F33-8911-CE20C73681DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F3B347F-8E7F-477D-B030-7D05725CC9FD}
+	EndGlobalSection
+EndGlobal
