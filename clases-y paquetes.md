@@ -122,7 +122,11 @@ builder.Logging.SetMinimumLevel(LogLevel.Information);
 ## Paquetes 
 * Microsoft.Extensions.Logging.ApplicationInsights
 * Microsoft.ApplicationInsights.AspNetCore
-  
+
+## Classes
+* ILogger
+* TelemetryClient
+
 ## Configuracion Program.cs
 ```csharp
 builder.Services.AddApplicationInsightsTelemetry();
