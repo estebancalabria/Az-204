@@ -343,77 +343,109 @@ az keyvault create \--name key4trainner \--resource-grouo Rg-Az204-Clase8-Trainn
 
 Az login
 
-## AppService Plan {#appservice-plan}
+---
+
+## AppService Plan 
 
 ### Listar Planes {#listar-planes}
 
+```
 az appservice plan list
+```
 
 ### Crear Un Plan {#crear-un-plan}
 
+```
 az appservice plan create \--name Plan-Free \--resource-group Rg-Az204-Clase8-Trainner \--location eastus \--sku F1
+```
 
- az appservice plan create \--name Plan-Free-Linux \--resource-group Rg-Az204-Clase8-Trainner \--location eastus \--sku F1 **\--is-linux**
+```
+az appservice plan create \--name Plan-Free-Linux \--resource-group Rg-Az204-Clase8-Trainner \--location eastus \--sku F1 **\--is-linux**
+```
 
-Borrar un Plan
+### Borrar un Plan
 
+```
 az appservice plan delete \--name Plan-Free \--resource-group Rg-Az204-Clase8-Trainner
+```
+---
 
-## AppService {#appservice}
+## AppService 
 
 ### Listar WebApps {#listar-webapps}
 
+```
 az webapp list
+```
 
 ### Crear una WebApp {#crear-una-webapp}
 
 	(EL PLAN TIENE QUE EXISTIR)
-
+```
 az webapp create \--name app-az204-frontend-trainner \--plan ASP-RgAz204ClaseDos-a2d9 \--resource-group Rg-Az204-Clase-Dos \--runtime "dotnet:6"
+```
 
 ### Listar los Runtimes {#listar-los-runtimes}
 
-az webapp list-runtimes \--os-type linux 
+```
+az webapp list-runtimes --os-type linux 
+``
 
 ### Hacer Deploy de una Web App Desde un Zip (2\<\<\<) {#hacer-deploy-de-una-web-app-desde-un-zip-(2<<<)}
 
+```
 ~~dotnet build \-c Release~~  
 dotnet publish \-c Release
 
 Comprimir dontenido de la capeta publish en un zip
 
 az webapp deploy \--resource-group Rg-Az204-Clase-Siete-Trainner \--name AwesomeApp4Trainner \--src-path c:\\temp\\publish.zip
+```
 
 ### Hacer Deploy de una Web App desde Git {#hacer-deploy-de-una-web-app-desde-git}
 
-az webapp deployment source config \--name appClaseDiez \--resource-group Rg-Az204-Clase-Diez \--repo-url   
-\--branch main
+```
+az webapp deployment source config \--name appClaseDiez \--resource-group Rg-Az204-Clase-Diez \--repo-url  --branch main
+```
+
+### Hacer deploy y crear el app service y el plan al mismo tiempo
+
+```
+az webapp up --resource-group rg-az204-bs-clase-18 --name webapp4trainner --plan plan-windows     
+```
 
 ### Configurar una App {#configurar-una-app}
 
+```
 (Agregar una entrada en el appsettings)
 
 az webapp config appsettings set \-g Rg-Az204-Clase-Dos \-n app-az204-frontend-trainner \--settings ApiUrl=[https://app-az204-api-trainner.azurewebsites.net/](https://app-az204-api-trainner.azurewebsites.net/)
+```
+
+---
 
 ## Function App {#function-app}
 
 ### Crear una function app {#crear-una-function-app}
 
 	(Con Application Insights Automatico)
-
+```
 az functionapp create \--name func4deploy \--resource-group Rg-Az204-Clase-Cuatro \--storage-account storemedia4trainner \--runtime dotnet \--consumption-plan-location eastus
+```
 
 ### Crear Function App Eligiendo el Plan {#crear-function-app-eligiendo-el-plan}
 
+```
 az functionapp create \--name Fun-Az204-Trainner \--resource-group Rg-Az204-Clase8-Trainner \--runtime dotnet \--runtime-version 6 \--os-type Linux \--plan Plan-Free-Linux-Trainner  \--storage-account sa4trainner4fapp \--functions-version 4
+```
 
 ### Deploy de una Function App {#deploy-de-una-function-app}
 
+```
 az functionapp deployment source config-zip \--resource-group rg-az204-lab-dos \--name func4trainner \--src func.zip
+```
 
-## 
-
-## 
+---
 
 ## Disk {#disk}
 
