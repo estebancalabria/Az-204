@@ -14,5 +14,6 @@
 # Recursos Adicionales
 
 🔗 Buscar en youtube "Azure Datacenter Tour" : Ej [Enlace](https://www.youtube.com/watch?v=80aK2_iwMOs&t=3s)  
+🔗 Mapa en vivo Data Centers de Azure : https://datacenters.microsoft.com/globe/explore/
 🔗 Carrousel Conceptos Azure : [Enlace](https://www.instagram.com/p/DAuDAbjxBBn/?img_index=1/0)  
 🔗 Preguntas Examen :  [Enlace](https://github.com/Ditectrev/Microsoft-Azure-AZ-204-Developing-Solutions-for-Microsoft-Azure-Practice-Tests-Exams-Question-Answer)
