@@ -267,27 +267,41 @@ Get-NetAdapter | Set-NetIPInterface \-Forwarding Enabled
 Install-WindowsFeature \-name Web-Server \-IncludeManagementTools  
 	(Abre el 80 y 443 en el firewal de windows automaticamente)
 
-# Usar Comando AZ {#usar-comando-az}
+---
 
-## Loguearse en Azure {#loguearse-en-azure}
+# Usar Comando AZ
+
+- ## Loguearse en Azure 
 
 az Login
 
-## Resource Group {#resource-group}
+## Resource Group
 
-### Crear Resource Group {#crear-resource-group}
+- ### Crear Resource Group 
 
-az group create \--name Rg-Az204-Clase-Tres \--location eastus
+```bash
 
-### Eliminar un Resource Group {#eliminar-un-resource-group}
+az group create --name Rg-Az204-Clase-Tres --location eastus
 
-az group delete \--resource-group Rg-Temp   
+```
 
-## ARM Template {#arm-template}
+- ### Eliminar un Resource Group {#eliminar-un-resource-group}
 
-### Deploy de un ARM Template {#deploy-de-un-arm-template}
+```
 
-az deployment group create \--resource-group Rg-Az104-Lab3b \--template-file ./new-template.json
+az group delete --resource-group Rg-Temp
+
+```
+
+---
+
+## ARM Template 
+
+- ### Deploy de un ARM Template 
+
+```
+az deployment group create --resource-group Rg-Az104-Lab3b --template-file ./new-template.json
+```
 
 ## Account {#account}
 
@@ -347,13 +361,13 @@ Az login
 
 ## AppService Plan 
 
-### Listar Planes {#listar-planes}
+- ### Listar Planes {#listar-planes}
 
 ```
 az appservice plan list
 ```
 
-### Crear Un Plan {#crear-un-plan}
+- ### Crear Un Plan {#crear-un-plan}
 
 ```
 az appservice plan create \--name Plan-Free \--resource-group Rg-Az204-Clase8-Trainner \--location eastus \--sku F1
@@ -363,35 +377,37 @@ az appservice plan create \--name Plan-Free \--resource-group Rg-Az204-Clase8-Tr
 az appservice plan create \--name Plan-Free-Linux \--resource-group Rg-Az204-Clase8-Trainner \--location eastus \--sku F1 **\--is-linux**
 ```
 
-### Borrar un Plan
+- ### Borrar un Plan
 
 ```
 az appservice plan delete \--name Plan-Free \--resource-group Rg-Az204-Clase8-Trainner
 ```
+
 ---
 
 ## AppService 
 
-### Listar WebApps {#listar-webapps}
+- ### Listar WebApps
 
 ```
 az webapp list
 ```
 
-### Crear una WebApp {#crear-una-webapp}
+- ### Crear una WebApp 
 
-	(EL PLAN TIENE QUE EXISTIR)
+(EL PLAN TIENE QUE EXISTIR)
+
 ```
-az webapp create \--name app-az204-frontend-trainner \--plan ASP-RgAz204ClaseDos-a2d9 \--resource-group Rg-Az204-Clase-Dos \--runtime "dotnet:6"
+az webapp create --name app-az204-frontend-trainner --plan ASP-RgAz204ClaseDos-a2d9 \--resource-group Rg-Az204-Clase-Dos \--runtime "dotnet:6"
 ```
 
-### Listar los Runtimes {#listar-los-runtimes}
+- ### Listar los Runtimes {#listar-los-runtimes}
 
 ```
 az webapp list-runtimes --os-type linux 
 ``
 
-### Hacer Deploy de una Web App Desde un Zip (2\<\<\<) {#hacer-deploy-de-una-web-app-desde-un-zip-(2<<<)}
+- ### Hacer Deploy de una Web App Desde un Zip (2\<\<\<) {#hacer-deploy-de-una-web-app-desde-un-zip-(2<<<)}
 
 ```
 ~~dotnet build \-c Release~~  
@@ -402,19 +418,19 @@ Comprimir dontenido de la capeta publish en un zip
 az webapp deploy \--resource-group Rg-Az204-Clase-Siete-Trainner \--name AwesomeApp4Trainner \--src-path c:\\temp\\publish.zip
 ```
 
-### Hacer Deploy de una Web App desde Git {#hacer-deploy-de-una-web-app-desde-git}
+- ### Hacer Deploy de una Web App desde Git {#hacer-deploy-de-una-web-app-desde-git}
 
 ```
 az webapp deployment source config \--name appClaseDiez \--resource-group Rg-Az204-Clase-Diez \--repo-url  --branch main
 ```
 
-### Hacer deploy y crear el app service y el plan al mismo tiempo
+- ### Hacer deploy y crear el app service y el plan al mismo tiempo
 
 ```
 az webapp up --resource-group rg-az204-bs-clase-18 --name webapp4trainner --plan plan-windows     
 ```
 
-### Configurar una App {#configurar-una-app}
+- ### Configurar una App {#configurar-una-app}
 
 ```
 (Agregar una entrada en el appsettings)
