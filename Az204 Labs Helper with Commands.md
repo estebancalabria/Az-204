@@ -405,17 +405,40 @@ az webapp create --name app-az204-frontend-trainner --plan ASP-RgAz204ClaseDos-a
 
 ```
 az webapp list-runtimes --os-type linux 
-``
+```
 
 - ### Hacer Deploy de una Web App Desde un Zip (2\<\<\<) {#hacer-deploy-de-una-web-app-desde-un-zip-(2<<<)}
 
+* Requisito. Tener Instalado el comando AZ y loguearse el cli de azure
+
+```bash
+
+az login
+
 ```
-~~dotnet build \-c Release~~  
-dotnet publish \-c Release
 
-Comprimir dontenido de la capeta publish en un zip
+* Primero Compilamos la aplicacion
 
-az webapp deploy \--resource-group Rg-Az204-Clase-Siete-Trainner \--name AwesomeApp4Trainner \--src-path c:\\temp\\publish.zip
+```bash
+
+dotnet publish -c Release
+
+```
+
+Pararese en la careta donde esta el release
+
+```bash
+
+cd bin\Release\net9.0\publish\
+
+```
+
+* Comprimir dontenido de la capeta publish en un zip. Por ejemplo app.zip
+
+```bash
+
+az webapp deploy --resource-group Rg-Az204-Clase-Siete-Trainner --name AwesomeApp4Trainner --src-path app.zip
+
 ```
 
 - ### Hacer Deploy de una Web App desde Git {#hacer-deploy-de-una-web-app-desde-git}
