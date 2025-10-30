@@ -313,7 +313,8 @@ Get-AzSubscription
 
 az account set \--subscription \<name or id\>
 
-## 
+ 
+---
 
 ## Storage Account {#storage-account}
 
@@ -345,13 +346,15 @@ az storage blob directory upload \--container demo-container \--source db.json \
 
 az storage blob generate-sas \--account-name cs4trainner \--name template.json \--container-name private-contaner \--permission r  \--auth-mode login \--as-user  \--full-uri \--expiry "2023-01-08" 
 
+---
+
 ## Key Vault {#key-vault}
 
 ### Crear una Key Vault {#crear-una-key-vault}
 
 az keyvault create \--name key4trainner \--resource-grouo Rg-Az204-Clase8-Trainner  \--location eastus \--sku standard**\--enable-purge-protection $true \--retention-days 90**
-
-## 
+ 
+--
 
 ## Login {#login}
 
@@ -370,11 +373,11 @@ az appservice plan list
 - ### Crear Un Plan {#crear-un-plan}
 
 ```
-az appservice plan create \--name Plan-Free \--resource-group Rg-Az204-Clase8-Trainner \--location eastus \--sku F1
+az appservice plan create --name Plan-Free --resource-group Rg-Az204-Clase8-Trainner --location eastus --sku F1
 ```
 
 ```
-az appservice plan create \--name Plan-Free-Linux \--resource-group Rg-Az204-Clase8-Trainner \--location eastus \--sku F1 **\--is-linux**
+az appservice plan create --name Plan-Free-Linux --resource-group Rg-Az204-Clase8-Trainner --location eastus --sku F1 **--is-linux**
 ```
 
 - ### Borrar un Plan
@@ -385,7 +388,7 @@ az appservice plan delete \--name Plan-Free \--resource-group Rg-Az204-Clase8-Tr
 
 ---
 
-## AppService 
+# AppService 
 
 - ### Listar WebApps
 
@@ -407,7 +410,7 @@ az webapp create --name app-az204-frontend-trainner --plan ASP-RgAz204ClaseDos-a
 az webapp list-runtimes --os-type linux 
 ```
 
-- ### Hacer Deploy de una Web App Desde un Zip (2\<\<\<) {#hacer-deploy-de-una-web-app-desde-un-zip-(2<<<)}
+- ### Hacer Deploy de una Web App Desde un Zip 
 
 * Requisito. Tener Instalado el comando AZ y loguearse el cli de azure
 
