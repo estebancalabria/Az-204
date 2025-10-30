@@ -12,9 +12,17 @@
 
 3. Creamos el Resource Group
 
+```
+az group create rg-az204-lab-01
+```
+
 4. Creamos el App Service Plan
 
 5. Creamos el App Service
+
+```
+az webapp create --name web4trainner --plan Plan-F1-Windows --resource-group rg-az204-lab-01 --runtime "dotnet:9"
+```
 
 6. Creamos una aplicacion en .NET localmente
 
