@@ -19,10 +19,55 @@ Vamos a programar una function App por linea de comand en un entorno local y lue
 * Crear una function App
 * Crear un directorio maquina local
 * Crear un proyecto de FunctionApp con Azure Function Core Tools
+
+```
+  func init --worker-runtime dotnet-isolated --target-framework net9.0 --force
+```
+
 * Compilar Proyecto 
 * Agregar funtion con Azure Function Core Tools
+
+```
+  func new --name "HolaMundo"
+```
+**Elegir HTTP Trigger**  
+
 * Programar la funcion
+
+```c#
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace FunctionApp
+{
+    public class HolaMundo
+    {
+        private readonly ILogger<HolaMundo> _logger;
+
+        public HolaMundo(ILogger<HolaMundo> logger)
+        {
+            _logger = logger;
+        }
+
+        [Function("HolaMundo")]
+        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
+        {
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
+            return new OkObjectResult("Hola mundo esta es mi primer funcion de Function APP!");
+        }
+    }
+}
+
+```
+
 * Probarla local
-* Loguearse a Azurr desde CLI local con comando AZ
+
+```
+dotnet run
+```
+
+* Loguearse a Azure desde CLI local con comando AZ
 * Publicar la funcion en Azure
 * Ejecutarla desde Internet
