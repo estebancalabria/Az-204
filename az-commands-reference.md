@@ -55,11 +55,9 @@ az deployment group create --resource-group Rg-Az104-Lab3b --template-file ./new
 
 ---
 
-## Storage
+## ![Storage Account](assets/storage-account.png) Storage Account
 
-### Storage Account
-
-#### Crear Storage Account
+- #### Crear Storage Account
 ```bash
 az storage account create --name sa4trainner4fapp --resource-group Rg-Az204-Clase8-Trainner --location eastus --sku Standard_LRS
 ```
@@ -68,7 +66,7 @@ az storage account create --name sa4trainner4fapp --resource-group Rg-Az204-Clas
 az storage account create --name storemedia4trainner --resource-group Rg-Az204-Clase-Cuatro --location eastus --sku Standard_LRS --kind StorageV2
 ```
 
-### Blob Storage
+- ### Blob Storage
 
 #### Crear un Blob Container
 ```bash
