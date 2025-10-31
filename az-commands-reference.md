@@ -55,7 +55,7 @@ az deployment group create --resource-group Rg-Az104-Lab3b --template-file ./new
 
 ---
 
-## <img src="assets/storage-account.png" alt="Storage Account" width="30"> Storage Account
+## <img src="assets/storage-account.png" alt="Storage Account" width="40"> Storage Account
 
 - #### Crear Storage Account
 ```bash
