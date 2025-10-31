@@ -175,23 +175,35 @@ az webapp config appsettings set -g Rg-Az204-Clase-Dos -n app-az204-frontend-tra
 az webapp log tail --name web4trainner --resource-group Rg-Az204-Bs-Clase-Siete
 ```
 
+---
 
-## Function Apps
+# Function Apps
 
-### Crear una function app (Con Application Insights Automático)
+- ### Crear una function app (Con Application Insights Automático)
+
 ```bash
 az functionapp create --name func4deploy --resource-group Rg-Az204-Clase-Cuatro --storage-account storemedia4trainner --runtime dotnet --consumption-plan-location eastus
 ```
 
-### Crear Function App Eligiendo el Plan
+- ### Crear Function App Eligiendo el Plan
+
 ```bash
 az functionapp create --name Fun-Az204-Trainner --resource-group Rg-Az204-Clase8-Trainner --runtime dotnet --runtime-version 6 --os-type Linux --plan Plan-Free-Linux-Trainner --storage-account sa4trainner4fapp --functions-version 4
 ```
 
-### Deploy de una Function App
+- ### Deploy de una Function App
+
 ```bash
-az functionapp deployment source config-zip --resource-group rg-az204-lab-dos --name func4trainner --src func.zip
+  az functionapp deployment source config-zip --resource-group rg-az204-lab-dos --name func4trainner --src func.zip
 ```
+
+- ### Deploy de una Function App con CLI func
+
+```
+  func azure functionapp publish func4trainner --dotnet-version 9.0
+```
+
+---
 
 ## Redes
 
