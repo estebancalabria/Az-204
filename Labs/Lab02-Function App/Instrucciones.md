@@ -69,5 +69,10 @@ dotnet run
 ```
 
 * Loguearse a Azure desde CLI local con comando AZ
+
+```
+   az login
+```
+
 * Publicar la funcion en Azure
 * Ejecutarla desde Internet
