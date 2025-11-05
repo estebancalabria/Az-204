@@ -2,7 +2,7 @@
 
 ## Deploy desde Container Registry Publicos
 
-- ### Deploy Conteiner en Container Instance desde Docker Hub
+### Deploy Conteiner en Container Instance desde Docker Hub
 
 * Usamos la imagen nginx
 
@@ -30,3 +30,4 @@
 * Elegir un nombre Unico
  
 - ### 
+
