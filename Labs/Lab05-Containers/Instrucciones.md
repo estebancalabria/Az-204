@@ -60,5 +60,44 @@ az acr import --name ac4trainer --source docker.io/library/nginx --image nginx
 
 * Crear el AKS
                     
+* Loguear en Kubernetes
 
-* ,,,
+```bash
+az aks get-credentials --resource-group rg-az104-clase-04  --name aks4trainner
+```
+
+* Listar los nodos
+
+```bash
+kubectl get nodes  
+```
+
+* Desplegar app
+
+```bash
+kubectl create deployment my-web --image=nginx
+```
+
+* Ver las instalaciones
+
+```bash
+kubectl get pods 
+```
+
+* Exponer la aplicacion para poder acceder desde intenet
+
+```bash
+kubectl expose deployment my-web --port=80 --type=LoadBalancer
+```
+
+* Ver la aplicacion isnstalada donde corre
+
+```bash
+kubectl get service
+```
+
+* Ir a la ip publica del contenedor (Con http:// no htpps://)
+  
+
+
+* 
