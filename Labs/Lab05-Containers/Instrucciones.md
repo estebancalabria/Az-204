@@ -41,3 +41,24 @@
 
 * Ir al directorio de la APP
 * Crear el archivo DockerFile
+
+## Deploy desde Kubernetes (AKS)
+
+* Crear el Resource Group
+
+* Crear el ACR
+
+* Crear el Admin user en el ACR
+> /Settings/Properties => Check "Admin User"
+
+* Subir un par de imagenes
+
+```bash
+az acr import --name ac4trainer --source mcr.microsoft.com/mcr/hello-world --image hello-world
+az acr import --name ac4trainer --source docker.io/library/nginx --image nginx
+```
+
+* Crear el AKS
+                    
+
+* ,,,
