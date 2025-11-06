@@ -298,6 +298,13 @@ az acr build --resource-group Rg-Az500-Clase-Cinco --registry acr4trainner --fil
 az container create --resource-group Rg-Az204-Clase-Seis-Trainner --name docker-4-trainner-ext-2 --image acr4trainner.azurecr.io/ipcheck:latest2 --assign-identity
 ```
 
+### Subir una imagen de un registry publico a mi ACR
+
+```bash
+az acr import --name ac4trainer --source mcr.microsoft.com/mcr/hello-world --image hello-world
+
+```
+
 ---
 ## Log Analytics Workspace
 
