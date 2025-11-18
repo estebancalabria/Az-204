@@ -48,5 +48,7 @@ New-AzKeyVault -Name kv4secureapp -ResourceGroupName "rg-az204-clase-07" -Locati
 - Crear un Acces Policy para un usuario
 
 ``` powershell
-Set-AzKeyVaultAccessPolicy -VaultName kv4secureapp -UserPrincipalName "esteban.calabria_gmail.com#EXT#@estebancalabriagmail.onmicrosoft.com" -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list -PermissionsToSecrets set,get,delete -PassThru 
+Set-AzKeyVaultAccessPolicy -VaultName kv4secureapp -UserPrincipalName "esteban.calabria_gmail.com#EXT#@estebancalabriagmail.onmicrosoft.com" -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list -PermissionsToSecrets list,set,get,delete -PassThru 
 ```
+
+# Function App
