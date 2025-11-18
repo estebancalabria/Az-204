@@ -25,5 +25,10 @@ New-AzAppServicePlan -Name "Plan-S1"  -Location 'westUS' -ResourceGroupName "rg-
 ```powershell
 New-AzWebApp -ResourceGroupName "rg-az204-clase-06" -Name web4Trainner -Location 'westUS' -AppServicePlan "Plan-S1-"      
 ```
-- Crear                           
+---
+# Storage Acoount
+
+- Crear un Storage Account                           
+```powershell
+New-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name cs4secureapp -Location 'westUS' -SkuName Standard_LRS
 ```
