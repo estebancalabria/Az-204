@@ -18,6 +18,7 @@ New-AzAppServicePlan -Name "Plan-S1"  -Location 'westUS' -ResourceGroupName "rg-
 ```
 
 ---
+
 # App Service
 
 - Crear un App Service
@@ -25,10 +26,27 @@ New-AzAppServicePlan -Name "Plan-S1"  -Location 'westUS' -ResourceGroupName "rg-
 ```powershell
 New-AzWebApp -ResourceGroupName "rg-az204-clase-06" -Name web4Trainner -Location 'westUS' -AppServicePlan "Plan-S1-"      
 ```
+
 ---
+
 # Storage Acoount
 
 - Crear un Storage Account                           
 ```powershell
 New-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name cs4secureapp -Location 'westUS' -SkuName Standard_LRS
+```
+
+---
+
+# Key Vault
+
+- Crear un Key Vaulr
+```powershell
+New-AzKeyVault -Name kv4secureapp -ResourceGroupName "rg-az204-clase-07" -Location 'westUS' -DisableRbacAuthorization -EnablePurgeProtection:$false -SoftDeleteRetentionInDays 7
+```
+
+- Crear un Acces Policy para un usuario
+
+``` powershell
+Set-AzKeyVaultAccessPolicy -VaultName kv4secureapp -UserPrincipalName "esteban.calabria_gmail.com#EXT#@estebancalabriagmail.onmicrosoft.com" -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list -PermissionsToSecrets set,get,delete -PassThru 
 ```
