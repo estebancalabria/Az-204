@@ -17,13 +17,13 @@ New-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name cs4secureapp -
 
 * Crear un container en el storage account
 
-    * Opcion 1
+**Opcion 1**
       
 ```powershell
 New-AzStorageContainer -Name "drop" -Permission Off -Context (Get-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name "cs4secureapp").Context
 ```   
 
-    * Opcion 2 : Con accont Key
+**Opcion 2 : Con accont Key**
     
 ```powershell
 $storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName "rg-az204-clase-07" -AccountName "cs4secureapp")[0].Value
