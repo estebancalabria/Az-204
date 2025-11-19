@@ -34,12 +34,28 @@ New-AzWebApp -ResourceGroupName "rg-az204-clase-06" -Name web4Trainner -Location
 
 ---
 
-# Storage Acoount
+# Storage Account
 
 - Crear un Storage Account                           
+
 ```powershell
 New-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name cs4secureapp -Location 'westUS' -SkuName Standard_LRS
 ```
+
+- Crear un Container en un Stroage Account
+
+```powershell
+New-AzStorageContainer -Name "drop2" -Permission Off -Context (Get-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name "cs4secureapp").Context
+```
+
+- Crear un Container en un Stroage Account con Key
+
+```powershell
+$storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName "rg-az204-clase-07" -AccountName "cs4secureapp")[0].Value
+
+New-AzStorageContainer -Name "drop" -Permission Off -Context (New-AzStorageContext -StorageAccountName cs4secureapp -StorageAccountKey $storageAccountKey)
+```
+
 
 ---
 
