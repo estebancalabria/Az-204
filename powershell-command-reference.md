@@ -17,6 +17,11 @@
 New-AzAppServicePlan -Name "Plan-S1"  -Location 'westUS' -ResourceGroupName "rg-az204-clase-06" -Tier "S1"
 ```
 
+- Darle un System Asinged Managed Identity a la function app
+```
+Set-AzFunctionApp -Name func4secureapp -ResourceGroupName rg-az204-clase-07 -IdentityType SystemAssigned
+```
+
 ---
 
 # App Service
@@ -51,6 +56,15 @@ New-AzKeyVault -Name kv4secureapp -ResourceGroupName "rg-az204-clase-07" -Locati
 Set-AzKeyVaultAccessPolicy -VaultName kv4secureapp -UserPrincipalName "esteban.calabria_gmail.com#EXT#@estebancalabriagmail.onmicrosoft.com" -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list -PermissionsToSecrets list,set,get,delete -PassThru 
 ```
 
+- Crear Secreto en el Key Vault
+
+```powershell
+  $SecretName = "NombreDeTuSecreto"
+$SecretValue = "ValorDelSecreto"
+
+Set-AzKeyVaultSecret -VaultName $KeyVaultName -Name $SecretName -SecretValue (ConvertTo-SecureString -String $SecretValue -AsPlainText -Force)
+```
+
 # Function App
 
 - Crear una Function App
@@ -59,3 +73,4 @@ Set-AzKeyVaultAccessPolicy -VaultName kv4secureapp -UserPrincipalName "esteban.c
 New-AzFunctionApp -Name func4secureapp -ResourceGroupName "rg-az204-clase-07" -Location 'westUS' -StorageAccountName cs4secureapp -Runtime dotnet -RuntimeVersion 8 -DisableApplicationInsights -FunctionsVersion 4 -OSType Windows
 ```
 > Desde el Portal o el comando Az se puede utilizar dotnet 9. Pero desde el comando de powershell no se puede crear una futionapp con dotnet 9
+
