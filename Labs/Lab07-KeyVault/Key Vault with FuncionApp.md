@@ -21,7 +21,7 @@ New-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name cs4secureapp -
       
 ```powershell
 New-AzStorageContainer -Name "drop" -Permission Off -Context (Get-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name "cs4secureapp").Context
-```
+```   
 
     * Opcion 2 : Con accont Key
     
