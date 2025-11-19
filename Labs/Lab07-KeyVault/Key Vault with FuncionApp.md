@@ -39,6 +39,67 @@ New-AzFunctionApp -Name func4secureapp -ResourceGroupName "rg-az204-clase-07" -L
 
 ```bash
 az functionapp identity assign --name func4secureapp --resource-group rg-az204-clase-07
-```  
+```
+
+* Obtener el connection String Del Storage Account
+
+```bash
+az storage account show-connection-string --name cs4secureapp --resource-group rg-az204-clase-07
+```
+
+* Guardar ese Connection String como secreto del Key Vault
+
+```powershell
+$connectionString = az storage account show-connection-string --name cs4secureapp --resource-group rg-az204-clase-07 --query connectionString -o tsv
+
+Set-AzKeyVaultSecret -VaultName kv4secureapp -Name storagecredentials -SecretValue (ConvertTo-SecureString -String $connectionString -AsPlainText -Force)
+```
+* Crear una access policy para que la function app pueda leer secretos del key vault
+
+```powershell
+$identityfuncapp = az functionapp show --name func4secureapp --resource-group rg-az204-clase-07 --query identity.principalId --output tsv
+
+az keyvault set-policy   --name kv4secureapp  --object-id $identityfuncapp  --secret-permissions get list
+```
+
+* Crear una configuracion en la Function App que lea el secreto del Key Vault
+
+```az
+az functionapp config appsettings set --name func4secureapp --resource-group rg-az204-clase-07  --settings "StorageConnectionString=@Microsoft.KeyVault(SecretUri=https://kv4secureapp.vault.azure.net/secrets/storagecredentials)"
+```
+
+* Crear LOCALMENTE una function APP
+
+```cmd
+func init --worker-runtime dotnet-isolated --target-framework net8.0 --force
+```
+  
+* Editar el proyecto con el Visual Studio Code
+
+```cmd
+code .
+```
+
+* Agregar una funcion de tipo HTTP Trigger
+
+```
+func new --template "HTTP trigger" --name "FileParser"
+```
+
+* Modificar el localsettings.json para agregar el valor que vamos a leer del Key Vault para probar
+
+```json
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+        "StorageConnectionString" : "[TEST VALUE]"
+    }
+}
+```
+
+* 
+
 
 * 
