@@ -15,6 +15,39 @@ az group create --name rg-az204-clase-07 --location westus
 New-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name cs4secureapp -Location 'westUS' -SkuName Standard_LRS
 ```
 
+* Crear un container en el storage account
+
+    * Opcion 1
+      
+```powershell
+New-AzStorageContainer -Name "drop" -Permission Off -Context (Get-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name "cs4secureapp").Context
+```
+
+    * Opcion 2 : Con accont Key
+    
+```powershell
+$storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName "rg-az204-clase-07" -AccountName "cs4secureapp")[0].Value
+
+New-AzStorageContainer -Name "drop" -Permission Off -Context (New-AzStorageContext -StorageAccountName cs4secureapp -StorageAccountKey $storageAccountKey)
+```
+
+* Crear un archivo con un json en el Azure Cli
+
+```powershell
+Set-Content -Path "datos.json" -Value (Invoke-RestMethod -Uri "https://jsonplaceholder.typicode.com/users/1/todos" | ConvertTo-Json -Compress)
+```
+
+* Subir el archivo datos.json a un blob de un storage account
+
+```
+Set-AzStorageBlobContent -File "datos.json" -Container "drop" -Blob "datos.json" -Context (Get-AzStorageAccount -ResourceGroupName "rg-az204-clase-07" -Name "cs4secureapp").Context -Force
+
+
+
+```
+
+* 
+
 * Crear un Key Vault
 
 ```powershell
@@ -110,17 +143,12 @@ using System.Net;
 
 namespace FunctionApp
 {
-    public class FileParser
+    public class FileParser(ILogger<FileParser> logger)
     {
-        private readonly ILogger<FileParser> _logger;
-
-        public FileParser(ILogger<FileParser> logger)
-        {
-            _logger = logger;
-        }
+        private readonly ILogger<FileParser> _logger = logger;
 
         [Function("FileParser")]
-        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
+        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
             
@@ -128,13 +156,12 @@ namespace FunctionApp
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
 
             string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString") ?? "No connection string found.";
-            response.WriteString(connectionString);
+            await response.WriteStringAsync(connectionString);
 
             return response;
         }
     }
 }
-
 ```
 
 *  Ejecutar y probar la funcion localmente
@@ -143,4 +170,21 @@ namespace FunctionApp
   func start
 ```
 
-* 
+* Lo probamos Localmente
+
+* Loguearse en Azure
+
+```
+az login
+```
+
+* Hacer deploy de la Function App en Azure
+
+```cmd
+func azure functionapp publish func4secureapp --dotnet-version 8.0
+```
+
+* Ir al portal y probar la function app
+    * El el portal en la parte de Overview Aparece la Fuction
+    * Elegir la funcion y en la parte de Code+test podes sacar la url de la funcion con la key en el querystring
+
