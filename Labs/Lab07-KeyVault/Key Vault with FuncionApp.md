@@ -99,7 +99,48 @@ func new --template "HTTP trigger" --name "FileParser"
 }
 ```
 
-* 
+* Editar el Archivo FileParser.cs para que lea el valor de StorageConnectionString de los settings
 
+```c#
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+
+using System.Net;
+
+namespace FunctionApp
+{
+    public class FileParser
+    {
+        private readonly ILogger<FileParser> _logger;
+
+        public FileParser(ILogger<FileParser> logger)
+        {
+            _logger = logger;
+        }
+
+        [Function("FileParser")]
+        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
+        {
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
+            
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+
+            string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString") ?? "No connection string found.";
+            response.WriteString(connectionString);
+
+            return response;
+        }
+    }
+}
+
+```
+
+*  Ejecutar y probar la funcion localmente
+
+```cmd
+  func start
+```
 
 * 
