@@ -44,9 +44,7 @@ Set-AzStorageBlobContent -File "datos.json" -Container "drop" -Blob "datos.json"
 
 
 
-```
-
-* 
+``` 
 
 * Crear un Key Vault
 
@@ -188,3 +186,61 @@ func azure functionapp publish func4secureapp --dotnet-version 8.0
     * El el portal en la parte de Overview Aparece la Fuction
     * Elegir la funcion y en la parte de Code+test podes sacar la url de la funcion con la key en el querystring
 
+* Leer el archivo del stroage account desde el function app
+
+* Agegar el paquete de Blobs al proyecto de la function app
+
+```cmd
+dotnet add package Azure.Storage.Blobs
+```
+
+* Modificar el fuente de la function App
+
+```c#
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
+
+using System.Net;
+
+namespace FunctionApp
+{
+    public class FileParser(ILogger<FileParser> logger)
+    {
+        private readonly ILogger<FileParser> _logger = logger;
+
+        [Function("FileParser")]
+        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
+        {
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
+            
+            var response = req.CreateResponse(HttpStatusCode.OK);
+
+            string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString") ?? "No connection string found.";
+            BlobClient blobClient = new BlobClient(connectionString, "drop", "datos.json");
+            BlobDownloadResult downloadResult = await blobClient.DownloadContentAsync();
+
+            await response.WriteStringAsync(downloadResult.Content.ToString());
+
+            return response;
+        }
+    }
+}
+
+```
+
+*  Compilar la function app
+
+```cmd
+dotnet build
+```
+
+* Subir la function app modificaa
+
+```cmd
+func azure functionapp publish func4secureapp --dotnet-version 8.0
+```
+
+* Probar la function app desplegaa en Azure
