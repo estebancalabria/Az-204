@@ -28,5 +28,22 @@ az webapp create --name web4httpbin --plan Plan-B1-Linux --resource-group rg-az2
 
 ---
 
+* Crear el servicio de Api Management
 
+```bash
+az apim create --resource-group rg-az204-lab-08 --name apim4httpbin --publisher-name "Esteban Calabria" --publisher-email "mct.esteban.calabria@gmail.com" --location westus --sku-name Consumption 
+```
 
+> Nota : Tarda bastante en crear
+
+---
+
+* Ir al servicio de Api Management y crear una Api HTTP
+
+    * Seccion Api
+    * Definir nueva Api HTTP
+    * Display Name : HTTPBin Api
+    * Web service URL : web4httpbin.azurewebsites.net  (URL de nuesta app service)
+    * API URL suffix : DEJAR VACIO
+
+---
