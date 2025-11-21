@@ -1,5 +1,7 @@
 # Laboratorio 08 : Api Management
 
+## Tarea 1 : Preparar el entorno
+
 * Crear un Resource Group
 
 ```bash
@@ -38,6 +40,12 @@ az apim create --resource-group rg-az204-lab-08 --name apim4httpbin --publisher-
 
 ---
 
+## Tarea 2 : Configurar el api management
+
+* Crear una Api
+
+- ### Desde el Portal
+
 * Ir al servicio de Api Management y crear una Api HTTP
 
     * Seccion Api
@@ -46,21 +54,51 @@ az apim create --resource-group rg-az204-lab-08 --name apim4httpbin --publisher-
     * Web service URL : https://web4httpbin.azurewebsites.net/  (URL de nuesta app service)
     * API URL suffix : DEJAR VACIO
 
+- ### Con el Cli
+
+```bash
+az apim api create --resource-group rg-az204-lab-08 --service-name apim4httpbin --display-name "HTTPBin Api" --api-id "httpbin-api" --path "" --protocols https --service-url "https://web4httpbin.azurewebsites.net/"
+```
+
 ---
+
+* Agregar una operacion
+
+- ### Desde el Portal
 
 * Agregar una un endpoint y configurar la parte de Frontend
     * Apretar el boton que dice "+ Operation"
       * Completar
           * Display Name : Echo Headers
           * URL : GET /
+
+-- Desde el CLI
+
+```bash
+az apim api operation create --resource-group rg-az204-lab-08 --service-name apim4httpbin --api-id httpbin-api --display-name "Echo Headers" --operation-id echo-headers --method GET --url-template "/"    
+```
        
 ---
+
+* Configurar el  Backend de la operacion
+
+- ### Desde el portal
 
 * Configurar la parte de Backend
     * Seleccionar la Operacion que acabamos de crear
     * Selegir el lapicito para editar el backend
     * Completar
           * Service URL : https://web4httpbin.azurewebsites.net/headers  (Check Override)
+
+- ### Desde el CLI
+
+```powershell
+
+Set-AzApiManagementPolicy -Context (New-AzApiManagementContext -ResourceGroupName "rg-az204-lab-08" -ServiceName "apim4httpbin") -ApiId httpbin-api -OperationId echo-headers -Policy "<policies><inbound><base /><set-backend-service base-url='https://web4httpbin.azurewebsites.net/headers' /> </inbound>  <backend>   <base />  </backend>   <outbound>     <base />   </outbound>    <on-error>        <base />   </on-error> </policies>"
+
+```
+
+> No lo pude hacer funcionar con el comando az
 
 ---
 
