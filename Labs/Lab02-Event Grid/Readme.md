@@ -23,6 +23,53 @@
 
 * Verficar en la aplicacion web que efectivamente se haya recibido el evento de subscripcion
 
-* 
+* Crear una aplicacion para publicar Eventos en el topico
+
+```cmd
+   dotnet new console --name EventGridPublisher
+```
+
+* Editar esta aplicacion con VSCode
+
+```cmd
+code .
+```
+
+* Instalar el paquete Azure.Messaging.EventGrid
+
+``` cmd
+  dotnet add package Azure.Messaging.EventGrid
+```
+
+* Codificar el envio de un evento
+
+```c#
+using Azure;
+using Azure.Messaging.EventGrid;
+
+
+Console.WriteLine("Ingrese el endpoint del topic");
+string topicEndpoint = Console.ReadLine()!;
+
+Console.WriteLine("Ingrese la key del topic");
+string topickey = Console.ReadLine()!;
+
+Console.WriteLine("Ingrese informacion para mandar en el evento");
+string data = Console.ReadLine()!;
+
+AzureKeyCredential credential = new AzureKeyCredential(topickey);
+EventGridPublisherClient client = new EventGridPublisherClient(new Uri(topicEndpoint), credential);
+
+EventGridEvent eventGridEvent = new EventGridEvent(
+    subject: "Test.Subject",
+    eventType: "Test.EventType",
+    dataVersion: "1.0",
+    data: new { Info = data }
+);
+
+await client.SendEventAsync(eventGridEvent);
+
+Console.WriteLine("Evento enviado correctamente.");
+```
 
 
