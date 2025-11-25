@@ -72,4 +72,12 @@ await client.SendEventAsync(eventGridEvent);
 Console.WriteLine("Evento enviado correctamente.");
 ```
 
+* Ejecutar la aplicacion
 
+```cmd
+dotnet run
+```
+
+> Nececitamos ingresar el topicurl y la key
+
+* Verificar en la aplicacion que se recibio el evento.
