@@ -15,5 +15,14 @@
     * Plan : B1 
     * Imagen : microsoftlearning/azure-event-grid-viewer:latest
 
+* Probar el despliegue
+
+* Crear una subscripcion en el topico para la aplicacion
+   * Nombre : subscription-4-eventviewer-lab09
+   * Endpoint : https://eventviewer-lab09.azurewebsites.net/api/update
+
+* Verficar en la aplicacion web que efectivamente se haya recibido el evento de subscripcion
+
+* 
 
 
