@@ -1,4 +1,4 @@
-# Lab 9 - Event Grid - Extra
+# Lab 9 - Extra - Event Grid - System Topics 
 
 * Crear el Resource Group
 
@@ -99,3 +99,4 @@ Se deberia recibir un evento de esta forma:
 Evento Recibido
 [{"topic":"/subscriptions/91dc3067-fd7a-4ed3-95eb-8c938f69cbfe/resourceGroups/rg-Az204-lab-09/providers/Microsoft.Storage/storageAccounts/cs4events","subject":"/blobServices/default/containers/upload/blobs/55a29d22d81646f8a27d22d98629469e (1).webp","eventType":"Microsoft.Storage.BlobCreated","id":"8c5af164-a01e-0068-756d-5e9738065c04","data":{"api":"PutBlob","requestId":"8c5af164-a01e-0068-756d-5e9738000000","eTag":"0x8DE2C84B394EF2A","contentType":"image/webp","contentLength":42464,"blobType":"BlockBlob","accessTier":"Default","url":"https://cs4events.blob.core.windows.net/upload/55a29d22d81646f8a27d22d98629469e (1).webp","sequencer":"00000000000000000000000000022D49000000000cd09d91","storageDiagnostics":{"batchId":"4067ab1f-0006-0061-006d-5ed2eb000000"}},"dataVersion":"","metadataVersion":"1","eventTime":"2025-11-26T00:42:39.3376554Z"}]    
 ```
+
