@@ -11,7 +11,7 @@
 * Crear el Service Bus
 
 ```bash
-az servicebus namespace create --resource-group rg-az204-lab-10 --name bus4trainner --location westus --sku Standard          
+az servicebus namespace create --resource-group rg-az204-lab-10 --name bus4trainner --location westus --sku Standard           
 ```
 
 * Crear un topico
