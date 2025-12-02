@@ -74,4 +74,28 @@ await using (var producerClient = new EventHubProducerClient(connectionString, e
   dotnet run
 ```
 
+* Chequear el portal
+  * Podemos ver los eventos en el Data Explorer
+
 ## Crear una aplicacion que consume eventos
+
+* Crear la aplicacion
+
+```cmd
+dotnet new console --name EventHubCosumer
+```
+
+* Ir a la carpeta de la aplicacion
+
+```cmd
+cd EventHubConsumer
+```
+
+* Agregar Paquetes necesarios
+
+```
+dotnet add package Azure.Messaging.EventHubs
+dotnet add package Azure.Storage.Blobs
+```
+
+* 
