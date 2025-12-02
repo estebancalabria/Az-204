@@ -95,7 +95,78 @@ cd EventHubConsumer
 
 ```
 dotnet add package Azure.Messaging.EventHubs
+dotnet add package Azure.Messaging.EventHubs.Processor
 dotnet add package Azure.Storage.Blobs
 ```
 
-* 
+* Copiar este codigo al Program.cs
+
+```c#
+
+using Azure.Messaging.EventHubs;
+using Azure.Messaging.EventHubs.Processor;
+using Azure.Messaging.EventHubs.Primitives;
+using Azure.Storage.Blobs;
+using System.Text;
+
+Console.WriteLine("Event Hub Consumer Example with Checkpointing");
+
+
+Console.Write("Enter the Event Hubs namespace connection string: ");
+String connectionString = Console.ReadLine()!;
+
+Console.Write("Enter the Event Hub name: ");
+String eventHubName = Console.ReadLine()!;
+
+Console.Write("Enter the Blob Storage connection string: ");
+String blobStorageConnectionString = Console.ReadLine()!;
+
+Console.Write("Enter the Blob Container name: ");
+String blobContainerName = Console.ReadLine()!;
+
+// Create a BlobContainerClient that the EventProcessorClient will use
+BlobContainerClient storageClient = new BlobContainerClient(blobStorageConnectionString, blobContainerName);
+
+// Create an EventProcessorClient to process events
+
+EventProcessorClient processor = new EventProcessorClient(storageClient,
+                "$Default",
+                connectionString,
+                eventHubName);
+
+
+processor.ProcessEventAsync += async (ProcessEventArgs eventArgs) =>
+{
+    // Write the body of the event to the console window
+    Console.WriteLine($"Received event: { Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray()) }");
+
+    // Update checkpoint in the blob storage so that the app receives only new events the next time it's run
+    await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
+};
+
+processor.ProcessErrorAsync += async (ProcessErrorEventArgs eventArgs) =>
+{
+    // Write details about the error to the console window
+    Console.WriteLine($"\nError on Partition: { eventArgs.PartitionId }, Error: { eventArgs.Exception.Message }\n");
+    await Task.CompletedTask;
+};
+
+// Start the processing
+Console.WriteLine("Starting the processor...");
+await processor.StartProcessingAsync();
+
+Console.WriteLine("Press [Enter] to stop the processor.");
+Console.ReadLine();
+
+await processor.StopProcessingAsync();
+``` 
+
+* Ejecutar el proyecto
+
+```cmd
+  dotnet run
+```
+
+* Probar la app que recibe
+
+> Podemos recibir primerlo los eventos que habiamos enviado antes y luego podemos mandar otros 10 para ver como los recibimos en forma sincronica
