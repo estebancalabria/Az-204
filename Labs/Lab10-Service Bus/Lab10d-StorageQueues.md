@@ -89,3 +89,84 @@ dotnet run
 ```
 
 ## Aplicacion que consume mensajes de la queue 
+
+* Crear la aplicacion
+
+```cmd
+dotnet new console --name QueueReceiver
+```
+
+* Pararse en el directorio de la Aplicacion
+
+```cmd
+cd QueueReceiver
+```
+
+* Agregar los paquetes necesarios
+
+```cmd
+dotnet add package Azure.Storage.Queues
+```
+
+* Crear el programa que recibe mensajes de la Queue
+
+```cmd
+using Azure.Storage.Queues;
+using Azure.Storage.Queues.Models;
+
+Console.WriteLine("=== Azure Queue Message Receiver ===\n");
+
+// Solicitar datos al usuario
+Console.Write("Connection String: ");
+string? connectionString = Console.ReadLine();
+
+Console.Write("Queue Name: ");
+string? queueName = Console.ReadLine();
+
+try
+{
+    // Crear cliente de queue (reutilizable)
+    var queueClient = new QueueClient(connectionString, queueName);
+    
+    // Asegurar que la queue existe
+    await queueClient.CreateIfNotExistsAsync();
+    
+    Console.WriteLine($"\nListening for messages on queue '{queueName}'...");
+    Console.WriteLine("Press Ctrl+C to stop.\n");
+
+
+        // Recibir mensajes (hasta 32 a la vez, visibilidad de 30 segundos)
+        QueueMessage[] messages = await queueClient.ReceiveMessagesAsync(
+            maxMessages: 32,
+            visibilityTimeout: TimeSpan.FromSeconds(30));
+
+        if (messages.Length == 0)
+        {
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] No messages available.");
+            return;
+        }
+
+        foreach (var message in messages)
+        {
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Message received:");
+            Console.WriteLine($"  ID: {message.MessageId}");
+            Console.WriteLine($"  Content: {message.MessageText}");
+            Console.WriteLine($"  Dequeue Count: {message.DequeueCount}");
+            
+            // Eliminar el mensaje después de procesarlo
+            await queueClient.DeleteMessageAsync(message.MessageId, message.PopReceipt);
+            Console.WriteLine($"  Status: Deleted\n");
+        }
+    
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"\nError: {ex.Message}");
+}
+```
+
+* Probar el programa
+
+```cmd
+dotnet run
+```
